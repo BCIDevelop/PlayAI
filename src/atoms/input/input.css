@@ -3,7 +3,7 @@
   border: 1px solid #979797;
   border-radius: 4px;
   width: 100%;
-  height: 56px;
+  height: 55px;
 }
 
 .input-container {
@@ -43,21 +43,21 @@
 
 /* Focus al input y cambia el texto (Label) + valid*/
 .input-container__input:focus + i + .label-password, .animation-input + i + .label-password {
-  top: -6.5px;
+  top: -13.5px;
   font-size: 12px;
   background: transparent;
   left: 20px !important;
 }
 
 .input-container__input:focus + i + .label-email, .animation-input + i + .label-email {
-  top: -6.5px;
+  top: -13.5px;
   font-size: 12px;
   background: transparent;
   left: 21px !important;
 }
 
 .input-container__input:focus + i + .label-text, .animation-input + i + .label-text {
-  top: -6.5px;
+  top: -13.5px;
   font-size: 12px;
   background: transparent;
   left: 18px !important;
@@ -74,7 +74,8 @@
 }
 
 .input-container__input:focus + i + label {
-  color: #6200EE;
+  color: #fff;
+  font-weight: 500;
 }
 
 .animation-input, .animation-input + i + label {
@@ -93,6 +94,7 @@ i::after {
   background: #fff;
   transform: skewX(-45deg);
   transition: 0.2s;
+  background: transparent;
 }
 
 /* Movimiento de apertura del borde para que suba el label */

@@ -3,5 +3,4 @@ export const userSchema={
     last_name:String(),
     email:String(),
     password:String(),
-    rol_id:Number(),
 }

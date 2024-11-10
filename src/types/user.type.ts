@@ -1,5 +1,5 @@
 export type User ={
-    id:number
+    id:string
     name: string;
     last_name:string;
     email:string;
@@ -7,7 +7,7 @@ export type User ={
     avatar?:string
 }
 export type UserLogin = Omit<User, 'rol_id'| 'last_name' | 'name' | 'id'| 'avatar'>;
-export type UserLoggedStorage = UserLogged & { accessToken: string,refreshToken:string };
+export type UserLoggedStorage = UserLogged & { accessToken: string};
 export type UserLogged = Omit<User, 'password'>;
 
 

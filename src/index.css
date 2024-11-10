@@ -1,5 +1,5 @@
 :root{
-  --color-primary:#605BFF;
+  --color-primary:#501794;
   --color-secondary:#030229;
 }
 
@@ -10,4 +10,8 @@
 }
 button{
   cursor: pointer;
+}
+
+body{
+  font-family: "Poppins", serif;
 }
