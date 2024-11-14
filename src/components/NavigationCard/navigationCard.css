@@ -1,0 +1,30 @@
+.navigation-card-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    border: 0.5px solid;
+    height: 70px;
+    width: 90%;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+.navigation-card-container__image{
+    width: 15px;
+    aspect-ratio: 1;
+}
+.navigation-card-container__navigate{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.navigate-card-text-container__h4{
+    text-align: end;
+    font-size: 12px;
+}
+.navigation-card-container:hover{
+    border-color: rgb(0, 153, 255);
+}
+.navigation-card-container:hover .navigate-card-text-container__paragraph{
+    color: rgb(0, 153, 255);
+}

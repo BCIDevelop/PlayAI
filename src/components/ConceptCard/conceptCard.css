@@ -1,0 +1,8 @@
+.concept-card-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.concept-card-main-container__paragraph{
+    width: 90%;
+}

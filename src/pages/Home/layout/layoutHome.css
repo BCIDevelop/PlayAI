@@ -1,0 +1,17 @@
+.home-layout-container{
+    display: flex;
+    height: calc(100% - 60px);
+    position: relative;
+  
+}
+.home-layout-container__main{
+    padding: 30px 0 30px 20px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+@media (min-width:750px) {
+    .home-layout-container__main{
+        padding: 30px 0 30px 60px;
+    }
+}

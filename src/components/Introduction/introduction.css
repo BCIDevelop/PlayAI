@@ -1,0 +1,50 @@
+.introduction-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.introduction-container__header{
+    display: flex;
+    gap: 10px;
+}
+.header-introduction-container__image{
+    width: 25px;
+    aspect-ratio: 1;
+}
+.header-introduction-container__text{
+    font-weight: 600;
+    font-size:32px;
+}
+.introduction-container__user-flow{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.introduction-user-flow-container__title{
+    font-weight: 500;
+    font-size: 20px;
+}
+.introduction-user-flow-container__text{
+    font-size: 14px;
+}
+.introduction-user-flow-container__cards{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.introduction-container__featured{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+.featured-introduction-container__h2{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+@media (min-width:750px){
+    .introduction-user-flow-container__cards{
+        flex-direction: row;
+    }
+}

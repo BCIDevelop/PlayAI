@@ -1,10 +1,12 @@
-
+import { Outlet } from "react-router-dom"
+import LayoutHome from "./layout/LayoutHome"
 
 const Home = () => {
   return (
-    <div>
-       Home
-    </div>
+    <LayoutHome>
+      <Outlet></Outlet>
+    </LayoutHome>
+    
   )
 }
 

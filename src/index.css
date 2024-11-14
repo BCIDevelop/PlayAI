@@ -1,6 +1,7 @@
 :root{
   --color-primary:#501794;
   --color-secondary:#030229;
+  --layout-nav : 60px;
 }
 
 *,*::after,*::before{

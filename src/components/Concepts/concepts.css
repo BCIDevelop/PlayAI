@@ -1,0 +1,25 @@
+.concept-main-container__title-container{
+    display: flex;
+    gap: 10px;
+}
+.concept-title-container__logo{
+    width: 25px;
+    aspect-ratio: 1;
+}
+.concept-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.concept-title-container__title{
+    font-size: 32px;
+}
+.concept-main-container__section{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.concept-card-element-list{
+    margin-left: 20px;
+    width: calc(90% - 20px);
+}

@@ -12,6 +12,7 @@ const Auth = () => {
     const avatar = queryParams.get('avatar') as string
     const id = queryParams.get('id') as string
     const {storeUser} = useUser()
+
   useEffect(()=>{
    
     if(accessToken && email && id){
