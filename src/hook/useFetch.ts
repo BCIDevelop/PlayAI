@@ -21,9 +21,8 @@ const useFetch = <T,>({fetchOptions}:FetchType):[T | null, React.Dispatch<React.
         const signal = controllerRef.current.signal
         const {context,method,data,hasCredentials,bodyFormat} =fetchOptions
         const {results,status} = await makeRequest(signal,context,method,data,hasCredentials,bodyFormat)
-        console.log(results)
         if(!handleStatus(status,navigator,removeUser,showToast)) throw Error(`Fetch Error : ${status}`)
-        setData(results.results)
+        setData(results.results ? results.results:results)
     }
     catch(error:unknown){
         const errorRequest  = error as ErrorType

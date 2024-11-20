@@ -27,10 +27,6 @@
     filter: invert(38%) sepia(100%) saturate(2494%) hue-rotate(213deg) brightness(91%) contrast(94%);
 }
 
-.nav-section-element__icon-arrow{
-    width: 10px;
-    aspect-ratio: 1;
-}
 .nav-section-container__intro-container{
     display: flex;
     gap: 8px;
@@ -48,23 +44,12 @@
     flex-direction: column;
     gap: 20px;
 }
-.nav-section-list__element{
-    display: flex;
-    justify-content: space-between;
-    
-}
-.nav-section-element__container{
-    display: flex;
-    gap: 8px;
-}
-.nav-section-list__element:hover,.nav-section-container__intro-container:hover{
+
+
+.nav-section-element__container-main:hover,.nav-section-container__intro-container:hover{
     background-color: rgb(235, 228, 228);
 }
-.nav-section-element__text{
-    font-size: 13px;
-    color: #76787c;
-    
-}
+
 .nav-section-list__element,.nav-section-container__intro-container{
     padding: 8px 8px;
     cursor: pointer;

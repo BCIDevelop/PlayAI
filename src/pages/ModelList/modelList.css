@@ -1,0 +1,199 @@
+.model-list-container{
+    overflow-y: scroll;
+    height: calc(100vh - 60px);
+    position: relative;
+}
+.model-list-container__hero{
+    height: 75%;
+    background: radial-gradient(
+    circle,
+    rgba(146, 194, 255, 0.5) 10%, /* Blanco en el centro */
+    rgba(245, 245, 245, 1) 100%,
+    rgba(146, 194, 255, 0.5) 20%,
+    rgba(245, 245, 245, 1) 100%, /* Azul suave */
+    rgba(245, 245, 245, 1) 100% /* Blanco en los bordes */
+  );
+  display: flex;
+  flex-direction: column;
+
+}
+.hero-model-list-container__images{
+    display: flex;
+    height: 60%;
+    position: relative;
+    
+}
+.images-hero-model-container__figure{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    left: 40%;
+    top: 45%;
+    background-color: #fff;
+    box-shadow: 14px 18px 26px #0000000d;
+}
+.figure-container-hero-model__img{
+    object-fit: cover;
+    width: 80%;
+    aspect-ratio: 1;
+}
+.figure-container-hero-mode--microsoft{
+    top: 48%;
+    left: 27%;
+    transform: rotate(-20deg);
+}
+.figure-container-hero-mode--chat-gpt{
+    background-color: #65AD9E;
+    top: 46%;
+    left: 31%;
+    transform: rotate(-15deg);
+}
+.figure-container-hero-model--logo{
+    background-color: #000;
+    z-index: 2;
+}
+.figure-container-hero-mode--google{
+    top: 46%;
+    left: 52%;
+    transform: rotate(15deg);
+    z-index: 1;
+}
+.figure-container-hero-mode--meta{
+   z-index: 0;
+    top: 48%;
+    left: 60%;
+    transform: rotate(20deg);
+}
+.figure-container-hero-model__img--logo{
+    width: 50%;
+}
+.hero-model-list-container__h1,.hero-model-list-container__p{
+    width: 100%;
+    text-align: center;
+}
+
+.hero-model-list-container__h1{
+    font-size: 30px;
+}
+.filter-model-list-container__logo{
+    width: 25px;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+.main-section-model-list-container__filter{
+    display: flex;
+    margin-top: 20px;
+}
+.filter-model-list-container__search-container{
+    width: 80%;
+    margin-right: 20px;
+}
+.model-list-container__main{
+    padding: 0px 10px;
+}
+.main-section-model-list-container__cards-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.filter-model-list-container__wrapper{
+    display: none;
+
+}
+.filter-model-list-container__wrapper--active{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 99999;
+    width: 100vw;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 90px;
+}
+.main-section-model-list-container__cards-container--active{
+    display: none;
+}
+
+@media (min-width:750px){
+    .images-hero-model-container__figure{
+        top: 45%;
+        left : 45%;
+    }
+    .figure-container-hero-mode--microsoft{
+        top: 48%;
+        left: 40%;
+        transform: rotate(-20deg);
+    }
+    .figure-container-hero-mode--chat-gpt{
+        background-color: #65AD9E;
+        top: 46%;
+        left: 42%;
+        transform: rotate(-15deg);
+    }
+    .figure-container-hero-model--logo{
+        background-color: #000;
+        z-index: 2;
+    }
+    .figure-container-hero-mode--google{
+        top: 46%;
+        left: 49%;
+        transform: rotate(15deg);
+        z-index: 1;
+    }
+    .figure-container-hero-mode--meta{
+       z-index: 0;
+        top: 48%;
+        left: 52%;
+        transform: rotate(20deg);
+    }
+    .hero-model-list-container__p{
+        width: 100%;
+        font-size: 20px;
+    }
+    .hero-model-list-container__h1{
+        font-size: 60px;
+    }
+    .filter-model-list-container__logo{
+        display: none;
+    }
+    .model-list-container__main{
+        display: flex;
+        width: 100%;
+    }
+    .main-section-model-list-container__filter{
+        width: 25%;
+    }
+    .main-section-model-list-container__cards-container{
+        width: 75%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .main-section-model-list-container__filter{
+        flex-direction: column;
+    }
+    .filter-model-list-container__wrapper{
+        position: initial;
+        width: auto;
+        height: auto;
+    }
+    .main-section-model-list-container__cards-container{
+        display: flex;
+    }
+    .filter-model-list-wrapper-container__button{
+        display: none;
+    }
+    .filter-model-list-container__wrapper{
+        display: flex;
+    
+    }
+
+}

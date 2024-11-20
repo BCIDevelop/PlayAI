@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './navbar.css'
 import logo from '../../assets/playAILogo.svg'
 import Avatar from '../../atoms/avatar/Avatar'
@@ -8,12 +8,13 @@ import Hamburger from '../../atoms/hamburger/Hamburger'
 import { handlerMore } from './handler/handleMore.handler'
 const NavBar = () => {
     const {user} = useUser()
+    const navigator = useNavigate()
   return (
     <nav className='navbar-container'>
       <div className='navbar-container__brand navbar-brand'>
              <Hamburger></Hamburger>
             <img className='navbar-brand__image' src={logo} alt="logo" />
-            <h1 className='navbar-brand__h1'>PLAYAI</h1>
+            <h1 onClick={()=>navigator('/home') } className='navbar-brand__h1'>PLAYAI</h1>
       </div>
       <div className='navbar-container__aside'>
          <ul className='navbar-container__list lists-navbar'>

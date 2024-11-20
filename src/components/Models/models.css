@@ -1,0 +1,30 @@
+.models-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.models-main-container__title-container{
+    display: flex;
+    gap: 15px;
+}
+.model-icon{
+    width: 25px;
+    opacity: 0.3;
+}
+.description-model-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.description-model-container__h2{
+    font-size: 26px;
+}
+.description-model-container__lists{
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.lists-model-container__element::marker{
+   color: rgb(128, 128, 128);
+}

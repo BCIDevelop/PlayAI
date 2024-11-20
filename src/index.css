@@ -15,4 +15,5 @@ button{
 
 body{
   font-family: "Poppins", serif;
+  overflow-y: hidden;
 }
