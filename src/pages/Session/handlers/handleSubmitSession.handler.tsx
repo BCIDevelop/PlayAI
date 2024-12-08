@@ -21,15 +21,14 @@ export const handleSubmitLogin=async (e:React.FormEvent<HTMLFormElement>,control
     if(validatedSchema) {
         const signal = controlSignal.signal
         const {results,status} = await makeRequest(signal,"users/login","POST",userObject,false)
-
+        const {access_token , ...rest} = results
         if(handleStatus(status,navigate,removeUser,showToast)){
-            results.email = email
-            storeUser(results)
+            rest.email = email
+            storeUser({accessToken:access_token,...rest})
             navigate('/dashboard')
         }
         else showToast("Review your data")
        
-
     }
     
 }
