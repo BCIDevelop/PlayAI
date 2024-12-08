@@ -25,7 +25,7 @@ export const handleSubmitLogin=async (e:React.FormEvent<HTMLFormElement>,control
         if(handleStatus(status,navigate,removeUser,showToast)){
             rest.email = email
             storeUser({accessToken:access_token,...rest})
-            navigate('/dashboard')
+            navigate('/home')
         }
         else showToast("Review your data")
        

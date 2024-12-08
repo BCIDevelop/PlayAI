@@ -6,9 +6,9 @@ export const handleSearch = <T >(
   target: (keyof T),
 ) => {
   const text = e.target.value;
-  console.log(text)
+
   if (text === "") {
-    console.log(dataRef.current)
+ 
     setData(dataRef.current);
     return;
   }

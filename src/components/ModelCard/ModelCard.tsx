@@ -2,7 +2,7 @@ import { FetchedAIModelsType } from "../../types/aiModels/fetchedAIModels.type"
 import './modelCard.css'
 
 const ModelCard = ({model}:{model:FetchedAIModelsType}) => {
-  console.log(model)
+
   return (
     <div className="model-card-container">
       <div className="model-card-container__title title-model-card-container">
