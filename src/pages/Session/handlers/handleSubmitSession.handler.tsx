@@ -56,7 +56,10 @@ export const handleSubmitRegister=async (e:React.FormEvent<HTMLFormElement>,cont
     if(validatedSchema) {
         const signal = controlSignal.signal
         const {status} = await makeRequest(signal,"users/signUp","POST",userObject,false)
-        if(handleStatus(status,navigate,removeUser,showToast)) navigate('/login')
+        if(handleStatus(status,navigate,removeUser,showToast)) {
+            showToast('Mail sent to successfully','Success')
+            navigate('/login')
+        }
         else showToast("Review your data")
     } 
 }
