@@ -1,0 +1,36 @@
+.nav-section-element__container{
+    display: flex;
+    gap: 8px;
+}
+.nav-section-element__text{
+    font-size: 13px;
+    color: #76787c;
+    
+}
+.nav-section-list__element{
+  display: flex;
+  flex-direction: column;
+}
+.nav-section-element__container-main{
+    display: flex;
+    justify-content: space-between; 
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 3px;
+}
+.nav-section-element__icon-arrow{
+    width: 10px;
+    aspect-ratio: 1;
+}
+.nav-section-element__icon-arrow--active{
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-out;
+}
+.nav-section-element__lists{
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-left: 8px;
+    border-left: 0.5px solid;
+    border-color: #76787c;
+}

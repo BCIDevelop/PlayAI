@@ -1,0 +1,23 @@
+
+
+
+
+
+.filter-container{
+   
+    margin-top: 20px;
+    margin-left: 5px;
+    flex-direction: column;
+}
+.filter-container__form{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 8px;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.filter-container__p{
+    font-size: 14px;
+    font-weight: 600;
+}
