@@ -5,7 +5,7 @@ import { SearchType } from '../../types/search.type';
 
 
 const Search = <T,>({ setData, data, target }: SearchType<T >) => {
-  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const timeoutRef = useRef<number | undefined>(undefined);
   const dataRef = useRef<T[]>(data);
   useEffect(()=>{
     if(!dataRef.current) dataRef.current = data
