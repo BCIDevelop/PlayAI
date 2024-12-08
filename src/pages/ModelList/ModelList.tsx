@@ -11,7 +11,6 @@ import ModelCard from '../../components/ModelCard/ModelCard'
 import Filter from '../../components/Filter/Filter'
 import { handlerClickFilter } from './handlers/handlerClickFilter.handler'
 import Button from '../../atoms/button/Button'
-import { handleClickFilterClose } from './handlers/handleClickFilterClose.handler'
 
 const ModelList = () => {
     const [data,setData] = useFetch<FetchedAIModelsType[]>({fetchOptions:{

@@ -8,7 +8,7 @@ export const handleStatus = (status:number,navigate:NavigateFunction,removeUser:
         return false
     }
     if(status===400){
-        showToast("Por favor revisa tus datos")
+        showToast("Please review your data")
         return false
     }
     if(status===500) {

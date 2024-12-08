@@ -38,7 +38,7 @@ const Models = () => {
         <p className="description-model-container__description">{data?.description}</p>
         <p className="description-model-container__description">{`For example ${textCapitalized} can be used to:` }</p>
         <ul className="description-model-container__lists lists-model-container">
-          {data?.applications.map(element => <li className="lists-model-container__element">{element}</li>)}
+          {data?.applications.map((element,index) => <li key={`tag${data._id}${index}`} className="lists-model-container__element">{element}</li>)}
         </ul>
       </div>
     </div>

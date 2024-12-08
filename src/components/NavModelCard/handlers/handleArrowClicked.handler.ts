@@ -13,10 +13,10 @@ export const handleArrowClick =async (e:React.MouseEvent<SVGSVGElement>,controll
     const controller = new AbortController()
     controllerRef.current = controller
     const signal = controllerRef.current.signal
-    const {results,status} =await makeRequest(signal,`models?tag=${name}&per_page=3`,'GET',{},true)
+    const {results,status} =await makeRequest(signal,`models?tags=${name}&per_page=3`,'GET',{},true)
     if(handleStatus(status,navigate,removeUser,showToast)){
         setIsModels(results.results)
     }
-    else showToast("Review your data")
+    else showToast("Review your data",)
 
 }
