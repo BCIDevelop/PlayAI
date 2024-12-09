@@ -1,19 +1,19 @@
 export const handleSearch = <T >(
   e: React.ChangeEvent<HTMLInputElement>,
   setData: React.Dispatch<React.SetStateAction<T[] | null>>,
-  timeoutRef: React.MutableRefObject<NodeJS.Timeout | undefined>,
+  timeoutRef: React.MutableRefObject<number | undefined>,
   dataRef: React.RefObject<T[]>,
   target: (keyof T),
 ) => {
   const text = e.target.value;
-  console.log(text)
+
   if (text === "") {
-    console.log(dataRef.current)
+ 
     setData(dataRef.current);
     return;
   }
   if (timeoutRef.current) return;
-  timeoutRef.current = setTimeout(() => {
+  timeoutRef.current = window.setTimeout(() => {
     const pattern = new RegExp(text, "i");
     const filteredData = dataRef.current!.filter((element: T) => {
       return pattern.test(String(element[target]))

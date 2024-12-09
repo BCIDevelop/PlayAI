@@ -23,14 +23,14 @@ export const handleSubmitLogin=async (e:React.FormEvent<HTMLFormElement>,control
         const signal = controlSignal.signal
         const {results,status} = await makeRequest(signal,"users/login","POST",userObject,false)
         if(setIsLoading) setIsLoading(false)
+        const {access_token , ...rest} = results
         if(handleStatus(status,navigate,removeUser,showToast)){
-            results.email = email
-            storeUser(results)
+            rest.email = email
+            storeUser({accessToken:access_token,...rest})
             navigate('/home')
         }
         else showToast("Review your data")
        
-
     }
     
 }
@@ -59,7 +59,10 @@ export const handleSubmitRegister=async (e:React.FormEvent<HTMLFormElement>,cont
         const signal = controlSignal.signal
         const {status} = await makeRequest(signal,"users/signUp","POST",userObject,false)
         if(setIsLoading) setIsLoading(false)
-        if(handleStatus(status,navigate,removeUser,showToast)) navigate('/login')
+        if(handleStatus(status,navigate,removeUser,showToast)) {
+            showToast('Mail sent to successfully','Success')
+            navigate('/login')
+        }
         else showToast("Review your data")
     } 
 }
