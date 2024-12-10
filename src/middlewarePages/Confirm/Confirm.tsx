@@ -18,7 +18,9 @@ const Confirm = () => {
     if(!token) navigator("/")
   })
   useEffect(()=>{
-    navigator('/success?type=confirm')
+    
+    console.log(data)
+    /* navigator('/success?type=confirm') */
   },[data])
   return (
     <></>
