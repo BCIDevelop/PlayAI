@@ -7,12 +7,12 @@ export const handleStatus = (status:number,navigate:NavigateFunction,removeUser:
         navigate('/login')
         return false
     }
-    if(status===400){
-        showToast("Please review your data")
-        return false
-    }
     if(status===401){
         showToast("Not Authorized")
+        return false
+    }
+    if(status===400){
+        showToast("Please review your data")
         return false
     }
     if(status===500) {

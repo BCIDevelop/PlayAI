@@ -19,8 +19,7 @@ const Confirm = () => {
   })
   useEffect(()=>{
     
-    console.log(data)
-    /* navigator('/success?type=confirm') */
+    if(data) navigator('/success?type=confirm') 
   },[data])
   return (
     <></>
