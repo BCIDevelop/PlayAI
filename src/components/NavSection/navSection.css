@@ -10,6 +10,7 @@
     flex-direction: column;
     gap: 25px;
     display: none;
+    overflow-y: scroll;
 }
 
 .nav-section-container--active{

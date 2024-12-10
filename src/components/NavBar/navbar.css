@@ -62,9 +62,34 @@
     display: flex;
     gap: 20px;
     align-items: center;
+    position: relative;
 }
 .user-container-navbar__user-info{
     display: none;
+}
+.user-container-navbar__icon{
+    cursor: pointer;
+}
+.user-container-navbar__dropdown{
+    display: none;
+    position: absolute;
+    left: calc(100% - 80px);
+    height: 50px;
+    top: 100%;
+    z-index: 1;
+    width: 80px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 10px;
+}
+.dropdown-user-navbar__log-out{
+    color: red;
+    font-weight: 500;
+    font-size: 14px;
+}
+.user-container-navbar__dropdown--active{
+    display: block;
 }
 @media (min-width: 750px) {
     .navbar-container__list{

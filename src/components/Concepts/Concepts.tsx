@@ -10,13 +10,13 @@ const Concepts = () => {
         </div>
         <section className="concept-main-container__section">
            
-                <ConceptCard text={"Mathematic Function obtained from the patterns presented in observations of an event, this function can make prediction or classification or association to help you to take better decisions of a real world problem"} title={"Models"}>
+                <ConceptCard text={"A model is a mathematical function derived from the patterns observed in data related to an event. This function can be used for predictions, classifications, or associations, helping to make better decisions when addressing real-world problems."} title={"Models"}>
                     <></>
                 </ConceptCard>
-               <ConceptCard text={"This is refer to the type of training that your AI model will have, the training of a model helps to learn the patterns of the observations in order to have good predictions, is good to mention that there are other types of Learning that AI model can have like Semi SUpervised Learning"} title={"Supervised / Unsupervised Learning"}>
+               <ConceptCard text={"This refers to the type of training your AI model undergoes. Training helps the model learn patterns in the data to make accurate predictions. It’s worth mentioning that there are other types of learning, such as semi-supervised learning."} title={"Supervised / Unsupervised Learning"}>
                     <ul>
-                        <li className="concept-card-element-list">Supervised Learning: You give the model observations with its "solutions" this solution is often call labels, this attribute is also called target variable</li>
-                        <li className="concept-card-element-list">Unsupervised Learning: You only have the observations but without the labels</li>
+                        <li className="concept-card-element-list">Supervised Learning: The model is provided with data points (observations) along with their corresponding "solutions," often called labels or target variables.</li>
+                        <li className="concept-card-element-list">Unsupervised Learning: The model is trained with data points that do not include labels.</li>
                     </ul>
                </ConceptCard>
                 <ConceptCard text={"Is a part of the Machine Learning area, where you use Neural Networks that is based on the perceptron unit. Perceptron is say that is the representation of how a real neuron in a person works. There are three widely used architectures"} title={"Deep Learning"}>
