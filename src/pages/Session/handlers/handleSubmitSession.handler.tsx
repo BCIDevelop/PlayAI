@@ -6,7 +6,7 @@ import { invalidEffect } from "../../../atoms/input/animations/label.animation"
 import makeRequest from "../../../services/api.service"
 import { NavigateFunction } from "react-router-dom"
 import { handleStatus } from "../../../utils/handleStatus"
-export const handleSubmitLogin=async (e:React.FormEvent<HTMLFormElement>,controlSignal:AbortController,navigate:NavigateFunction,storeUser:(dataUser: UserLoggedStorage) => void,removeUser:() => void,showToast:(message: string, type?: string) => void)=>{
+export const handleSubmitLogin=async (e:React.FormEvent<HTMLFormElement>,controlSignal:AbortController,navigate:NavigateFunction,storeUser:(dataUser: UserLoggedStorage) => void,removeUser:() => void,showToast:(message: string, type?: string) => void,setIsLoading:React.Dispatch<React.SetStateAction<boolean>>|undefined)=>{
     e.preventDefault()
     const inputs = document.querySelectorAll('.input-container__input') as NodeListOf<HTMLInputElement>
     const email = sanitizeInput(inputs[0].value.trim())
@@ -19,8 +19,10 @@ export const handleSubmitLogin=async (e:React.FormEvent<HTMLFormElement>,control
     const userObject:UserLogin = {email,password}
     const validatedSchema = validateInputs<Omit<User, 'id'>,UserLogin>( userObject,userSchema)
     if(validatedSchema) {
+        if(setIsLoading) setIsLoading(true)
         const signal = controlSignal.signal
         const {results,status} = await makeRequest(signal,"users/login","POST",userObject,false)
+        if(setIsLoading) setIsLoading(false)
         const {access_token , ...rest} = results
         if(handleStatus(status,navigate,removeUser,showToast)){
             rest.email = email
@@ -32,7 +34,7 @@ export const handleSubmitLogin=async (e:React.FormEvent<HTMLFormElement>,control
     }
     
 }
-export const handleSubmitRegister=async (e:React.FormEvent<HTMLFormElement>,controlSignal:AbortController,navigate:NavigateFunction,removeUser:() => void,showToast:(message: string, type?: string) => void)=>{
+export const handleSubmitRegister=async (e:React.FormEvent<HTMLFormElement>,controlSignal:AbortController,navigate:NavigateFunction,removeUser:() => void,showToast:(message: string, type?: string) => void,setIsLoading:React.Dispatch<React.SetStateAction<boolean>>|undefined)=>{
     e.preventDefault()
     const inputs = document.querySelectorAll('.input-container__input') as NodeListOf<HTMLInputElement>
     const email = sanitizeInput(inputs[1].value.trim())
@@ -53,8 +55,10 @@ export const handleSubmitRegister=async (e:React.FormEvent<HTMLFormElement>,cont
     const userObject:Omit<User, 'id'> = {email,password,name,last_name:lastName}
     const validatedSchema = validateInputs<Omit<User, 'id'>,UserLogin>( userObject,userSchema)
     if(validatedSchema) {
+        if(setIsLoading) setIsLoading(true)
         const signal = controlSignal.signal
         const {status} = await makeRequest(signal,"users/signUp","POST",userObject,false)
+        if(setIsLoading) setIsLoading(false)
         if(handleStatus(status,navigate,removeUser,showToast)) {
             showToast('Mail sent to successfully','Success')
             navigate('/login')
@@ -64,12 +68,12 @@ export const handleSubmitRegister=async (e:React.FormEvent<HTMLFormElement>,cont
 }
 
 export const handleLoginCurrying=(storeUser:(dataUser: UserLoggedStorage) => void,removeUser:()=>void,showToast:(message: string, type?: string) => void)=>{
-    return (e:React.FormEvent<HTMLFormElement>,controlSignal:AbortController,navigate?:NavigateFunction)=>{
-        return handleSubmitLogin(e,controlSignal,navigate!,storeUser,removeUser,showToast)
+    return (e:React.FormEvent<HTMLFormElement>,controlSignal:AbortController,navigate?:NavigateFunction,setIsLoading?:React.Dispatch<React.SetStateAction<boolean>>)=>{
+        return handleSubmitLogin(e,controlSignal,navigate!,storeUser,removeUser,showToast,setIsLoading)
     }
 }
 export const handleRegisterCurrying=(removeUser:()=>void,showToast:(message: string, type?: string) => void)=>{
-    return (e:React.FormEvent<HTMLFormElement>,controlSignal:AbortController,navigate?:NavigateFunction)=>{
-        return handleSubmitRegister(e,controlSignal,navigate!,removeUser,showToast)
+    return (e:React.FormEvent<HTMLFormElement>,controlSignal:AbortController,navigate?:NavigateFunction,setIsLoading?:React.Dispatch<React.SetStateAction<boolean>>)=>{
+        return handleSubmitRegister(e,controlSignal,navigate!,removeUser,showToast,setIsLoading)
     }
 }

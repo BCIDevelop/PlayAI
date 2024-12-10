@@ -6,6 +6,8 @@
     cursor: pointer;
     color: #fff;
     border: transparent;
+    display: flex;
+    justify-content: center;
   }
   .btn-submit:hover{
       background-color:  var(--color-primary);

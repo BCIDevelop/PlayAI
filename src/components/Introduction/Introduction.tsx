@@ -17,7 +17,7 @@ const Introduction = () => {
          <div className='introduction-user-flow-container__cards cards-introduction-user-flow-container'>
             
             <FlowCards image={block} routes={[{name:"Know the concepts",route:"/home/concepts"}]}></FlowCards>
-            <FlowCards image={explore} routes={[{name:"Explore your model",route:"/playground"},{name: "Evaluate the model",route:"/home/models/text-models"}]}></FlowCards>
+            <FlowCards image={explore} routes={[{name:"Explore your model",route:"/playground"},{name: "Evaluate the model",route:"/home/models-tag/text-models"}]}></FlowCards>
             <FlowCards image={model} routes={[{name:"Use the model",route:"/models"}]}></FlowCards>
          </div>
        </div>

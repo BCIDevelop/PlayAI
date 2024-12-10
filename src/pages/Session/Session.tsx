@@ -9,11 +9,13 @@ import useUser from '../../hook/useUser'
 import { handleLoginCurrying, handleRegisterCurrying } from './handlers/handleSubmitSession.handler'
 import useAlert from '../../hook/useAlert'
 import { handlerFacebook } from './handlers/handleFacebookAuth.handler'
+
 const Session = () => {
   const {storeUser,removeUser} = useUser()
   const location=useLocation()
   const {showToast} = useAlert()
   const isLogin = location.pathname ==='/login'
+ 
   const formProps = isLogin ? [{type:"email",label:"Email"},{type:"password",label:"password"}] 
   : [{type:"text",label:"Full Name"},{type:"email",label:"Email"},{type:"password",label:"Password"},{type:"password",label:"Confirm"}]
   return (
